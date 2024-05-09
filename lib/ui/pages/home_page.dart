@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_danieldefaria/ui/shared/custom_app_menu.dart';
+import 'package:flutter_web_danieldefaria/ui/shared/logo.dart';
 import 'package:flutter_web_danieldefaria/ui/views/about_view.dart';
 import 'package:flutter_web_danieldefaria/ui/views/contact_view.dart';
 import 'package:flutter_web_danieldefaria/ui/views/home_view.dart';
@@ -17,6 +18,11 @@ class HomePage extends StatelessWidget {
           children: [
 
             _HomeBody(),
+
+            Positioned(
+              left: 20,
+              top: 20,
+              child: Logo()),
 
             Positioned(
               right: 20,
