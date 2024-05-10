@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_web_danieldefaria/providers/page_provider.dart';
 import 'package:flutter_web_danieldefaria/ui/shared/custom_menu_item.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppMenu extends StatefulWidget {
   const CustomAppMenu({super.key});
@@ -25,6 +27,9 @@ class _CustomAppMenuState extends State<CustomAppMenu> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
+
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
+
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
@@ -49,10 +54,11 @@ class _CustomAppMenuState extends State<CustomAppMenu> with SingleTickerProvider
 
               if(isOpen)
               ... [
-              CustomMenuItem( delay: 0 , text: 'Video View', onPressed: (){}),
-              CustomMenuItem( delay: 45, text: 'About', onPressed: (){}),
-              CustomMenuItem( delay: 85, text: 'Portafolio', onPressed: (){}),
-              CustomMenuItem( delay: 120, text: 'Contact', onPressed: (){}),
+              CustomMenuItem( delay: 0 , text: 'Home',  onPressed: () => pageProvider.goTo(0)),
+              CustomMenuItem( delay: 0 , text: 'Video View',  onPressed: () => pageProvider.goTo(1)),
+              CustomMenuItem( delay: 45, text: 'About',       onPressed: () => pageProvider.goTo(2)),
+              CustomMenuItem( delay: 85, text: 'Portafolio',  onPressed: () => pageProvider.goTo(3)),
+              CustomMenuItem( delay: 120, text: 'Contact',    onPressed: () => pageProvider.goTo(4)),
               const SizedBox(height: 8,)
               ]
 

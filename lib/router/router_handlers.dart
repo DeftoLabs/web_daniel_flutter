@@ -5,6 +5,9 @@ import 'package:flutter_web_danieldefaria/ui/pages/home_page.dart';
 
 final homeHandler = Handler(
   handlerFunc: (context, parameters) {
-    
-    return HomePage();
+
+    final page = parameters ['page']!.first;
+    if (page != '/') {
+      return const  HomePage();
+    }
   },);
